@@ -11,10 +11,8 @@ public class Follow : MonoBehaviour
     public Transform target;
     private bool collided = false;
 
-    // Use this for initialization
     void Start()
     {
-        // if no target specified, assume the player
         if (target == null)
         {
 
@@ -25,18 +23,14 @@ public class Follow : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-       
 
         // face the target
         transform.LookAt(target);
 
         //get the distance between the chaser and the target
         float distance = Vector3.Distance(transform.position, target.position);
-
-        //so long as the chaser is farther away than the minimum distance, move towards it at rate speed.
         if (this.tag == "Helper")
         {
             if (collided == true)
@@ -65,7 +59,6 @@ public class Follow : MonoBehaviour
         }
     }
 
-    // Set the target of the chaser
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;
