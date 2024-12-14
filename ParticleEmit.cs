@@ -19,17 +19,12 @@ public class ParticleEmit : MonoBehaviour
     {
         if (leftHand != null && rightHand != null)
         {
-            // Get the direction from the left hand to the right hand
             Vector3 handDirection = rightHand.position - leftHand.position;
-
-            // Calculate the emission rate based on the distance between hands
             float distance = handDirection.magnitude;
             float emissionRate = MapDistanceToEmissionRate(distance);
 
-            // Calculate the start speed based on the distance between hands
             float startSpeed = MapDistanceToStartSpeed(distance);
 
-            // Apply the adjusted values to the Particle System
             var mainModule = particleSystem.main;
             mainModule.maxParticles = Mathf.CeilToInt(emissionRate * emissionRateMultiplier);
             mainModule.startSpeed = startSpeed;
@@ -38,7 +33,6 @@ public class ParticleEmit : MonoBehaviour
 
     float MapDistanceToEmissionRate(float distance)
     {
-        // Map the distance between hands to emission rate
         float mappedEmissionRate = Mathf.Lerp(minEmissionRate, maxEmissionRate, distance / maxEmissionRate);
 
         return Mathf.Clamp(mappedEmissionRate, minEmissionRate, maxEmissionRate);
@@ -46,7 +40,6 @@ public class ParticleEmit : MonoBehaviour
 
     float MapDistanceToStartSpeed(float distance)
     {
-        // Map the distance between hands to start speed
         float mappedStartSpeed = Mathf.Lerp(minStartSpeed, maxStartSpeed, distance / maxEmissionRate);
 
         return Mathf.Clamp(mappedStartSpeed, minStartSpeed, maxStartSpeed);
