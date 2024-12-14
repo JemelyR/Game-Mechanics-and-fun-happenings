@@ -11,7 +11,6 @@ public class PitchToGlow : MonoBehaviour
 
     public AudioSource audioSource;
 
-    // Start is called before the first frame update
     void Start()
     {
         if(glowLight == null)
@@ -19,8 +18,6 @@ public class PitchToGlow : MonoBehaviour
             enabled = false;
         }
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (audioSource.isPlaying)
