@@ -5,26 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    //    [SerializeField] private float WalkSpeed = 2;
-    //    [SerializeField] private float TurnSpeed = 45;
-    //    private Animator animator;
-
-    //    // Start is called before the first frame update
-    //    void Start()
-    //    {
-    //        animator = GetComponent<Animator>();
-    //    }
-
-    //    // Update is called once per frame
-    //    void Update()
-    //    {
-    //        Vector3 direction = transform.rotation;
-    //        var velocity = direction * Input.GetAxis("Vertical") * WalkSpeed;
-    //        transform.Translate(velocity * Time.deltaTime);
-    //        transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * Time.deltaTime * TurnSpeed);
-    //        animator.SetFloat("Speed", velocity.z);
-    //    }
-    //}
     public float Speed = 5f;
     public float JumpHeight = 2f;
     public float GroundDistance = 0.2f;
